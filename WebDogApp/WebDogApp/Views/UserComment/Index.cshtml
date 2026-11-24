@@ -1,0 +1,31 @@
+﻿@model IEnumerable<WebDogApp.Models.UserComment.UserCommentIndexVM>
+
+@{
+    ViewData["Title"] = "Коментари";
+}
+
+<h1>Мнения и коментари</h1>
+
+<p>
+    <a asp-action="Create" class="btn btn-primary">Добави коментар</a>
+</p>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>@Html.DisplayNameFor(model => model.UserName)</th>
+            <th>@Html.DisplayNameFor(model => model.Email)</th>
+            <th>@Html.DisplayNameFor(model => model.Comment)</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.UserName</td>
+                <td>@item.Email</td>
+                <td>@item.Comment</td>
+            </tr>
+        }
+    </tbody>
+</table>
